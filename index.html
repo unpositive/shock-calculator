@@ -145,12 +145,12 @@
     <p class="desc" data-i18n="d_a3">Додаток 2, П.2.52–П.2.63. Самопідтримна детонація: продукти рухаються зі швидкістю звуку, u₂ = a₂.</p>
     <div class="formula" data-i18n="f_a3">Вхід: γ₁, γ₂, p₁, ρ₁, q, R₂ → Вихід: D_CJ = u₁, p₂, ρ₂, T₂, u₂ = a₂, M₁</div>
     <div class="form-grid">
-      <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a3_g1" value="1.4"></div>
-      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_prod">(продукти)</span></label><input id="a3_g2" value="1.25"></div>
+      <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a3_g1" value="1.4015"></div>
+      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_prod">(продукти)</span></label><input id="a3_g2" value="1.2858"></div>
       <div class="field"><label>p₁ <span class="unit">Па / Pa</span></label><input id="a3_p1" value="101325"></div>
-      <div class="field"><label>ρ₁ <span class="unit">кг/м³</span></label><input id="a3_r1" value="0.870"></div>
-      <div class="field"><label>q <span class="unit">Дж/кг</span></label><input id="a3_q" value="3421000"></div>
-      <div class="field"><label>R₂ <span class="unit">Дж/(кг·К)</span></label><input id="a3_R2" value="338.8"></div>
+      <div class="field"><label>ρ₁ <span class="unit">кг/м³</span></label><input id="a3_r1" value="0.86977"></div>
+      <div class="field"><label>q <span class="unit">Дж/кг</span></label><input id="a3_q" value="2853084"></div>
+      <div class="field"><label>R₂ <span class="unit">Дж/(кг·К)</span></label><input id="a3_R2" value="347.62"></div>
     </div>
     <div class="buttons">
       <button class="btn btn-calc" onclick="calc3()" data-i18n="btn_calc">Обчислити</button>
@@ -167,13 +167,13 @@
     <p class="desc" data-i18n="d_a4">Додаток 2, П.2.20–П.2.21 — квадратне рівняння для u₂ розв'язується напряму; p₂ і ρ₂ — із законів збереження. Фізичний корінь — той, що дає дозвукові продукти (M₂ &lt; 1). Показано також відкинутий корінь.</p>
     <div class="formula" data-i18n="f_a4">Вхід: γ₁, γ₂, p₁, ρ₁, q, u₁, R₂ → Вихід: u₂, δ = u₂/u₁ = ρ₁/ρ₂, p₂, ρ₂, T₂, M₁, M₂</div>
     <div class="form-grid">
-      <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a4_g1" value="1.4"></div>
-      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_prod">(продукти)</span></label><input id="a4_g2" value="1.25"></div>
+      <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a4_g1" value="1.4015"></div>
+      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_prod">(продукти)</span></label><input id="a4_g2" value="1.2928"></div>
       <div class="field"><label>p₁ <span class="unit">Па / Pa</span></label><input id="a4_p1" value="101325"></div>
-      <div class="field"><label>ρ₁ <span class="unit">кг/м³</span></label><input id="a4_r1" value="0.870"></div>
-      <div class="field"><label>q <span class="unit">Дж/кг</span></label><input id="a4_q" value="3421000"></div>
-      <div class="field"><label>u₁ <span class="unit">м/с</span></label><input id="a4_u1" value="3"></div>
-      <div class="field"><label>R₂ <span class="unit">Дж/(кг·К)</span></label><input id="a4_R2" value="338.8"></div>
+      <div class="field"><label>ρ₁ <span class="unit">кг/м³</span></label><input id="a4_r1" value="0.86977"></div>
+      <div class="field"><label>q <span class="unit">Дж/кг</span></label><input id="a4_q" value="3187668"></div>
+      <div class="field"><label>u₁ <span class="unit">м/с</span></label><input id="a4_u1" value="2.253"></div>
+      <div class="field"><label>R₂ <span class="unit">Дж/(кг·К)</span></label><input id="a4_R2" value="342.47"></div>
     </div>
     <div class="buttons">
       <button class="btn btn-calc" onclick="calc4()" data-i18n="btn_calc">Обчислити</button>
@@ -193,15 +193,21 @@
   <div class="card">
     <h2 data-i18n="h_a5">Режим горіння — класифікація за швидкістю фронту u₁</h2>
     <p class="desc" data-i18n="d_a5">Для заданої суміші визначаються межі: швидкість дефлаграції Чепмена–Жуге u_CJ,def (верхня межа стаціонарної дефлаграції) і швидкість детонації D_CJ. Між ними стаціонарного фронту не існує (дискримінант D &lt; 0). Це — вихід для системи підтримки прийняття рішень.</p>
-    <div class="formula" data-i18n="f_a5">Вхід: γ₁, γ₂, p₁, ρ₁, q, R₂, u₁ → Вихід: режим, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, діаграма Гюгоніо</div>
+    <div class="formula" data-i18n="f_a5">Вхід: γ₁, p₁, ρ₁, u₁ + два набори (γ₂, q, R₂) → Вихід: режим, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, діаграма Гюгоніо</div>
     <div class="form-grid">
-      <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a5_g1" value="1.4"></div>
-      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_prod">(продукти)</span></label><input id="a5_g2" value="1.25"></div>
+      <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a5_g1" value="1.4015"></div>
       <div class="field"><label>p₁ <span class="unit">Па / Pa</span></label><input id="a5_p1" value="101325"></div>
-      <div class="field"><label>ρ₁ <span class="unit">кг/м³</span></label><input id="a5_r1" value="0.870"></div>
-      <div class="field"><label>q <span class="unit">Дж/кг</span></label><input id="a5_q" value="3421000"></div>
-      <div class="field"><label>R₂ <span class="unit">Дж/(кг·К)</span></label><input id="a5_R2" value="338.8"></div>
-      <div class="field"><label>u₁ <span class="unit">м/с</span></label><input id="a5_u1" value="3"></div>
+      <div class="field"><label>ρ₁ <span class="unit">кг/м³</span></label><input id="a5_r1" value="0.86977"></div>
+      <div class="field"><label>u₁ <span class="unit">м/с</span></label><input id="a5_u1" value="2.253"></div>
+    </div>
+    <p class="desc" style="margin-bottom:8px" data-i18n="d_sets">Два набори параметрів продуктів: для гілки дефлаграції вони беруться зі стану полум'я при сталому тиску, для гілки детонації — зі стану CJ (див. reference-data-methods.md). Пресети заповнюють обидва.</p>
+    <div class="form-grid">
+      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_g2def" value="1.2928"></div>
+      <div class="field"><label>q <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_qdef" value="3187668"></div>
+      <div class="field"><label>R₂ <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_R2def" value="342.47"></div>
+      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_g2det" value="1.2858"></div>
+      <div class="field"><label>q <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_qdet" value="2853084"></div>
+      <div class="field"><label>R₂ <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_R2det" value="347.62"></div>
     </div>
     <div class="buttons">
       <button class="btn btn-calc" onclick="calc5()" data-i18n="btn_calc">Обчислити</button>
@@ -214,11 +220,12 @@
     <div class="result-grid" id="res5_grid"></div>
     <div class="verify" id="res5_verify"></div>
     <h2 style="margin-top:18px" data-i18n="h_hug">Діаграма Гюгоніо (p–v)</h2>
-    <p class="desc" data-i18n="d_hug">Адіабата детонації (Гюгоніо з тепловиділенням q), пряма Релея для заданого u₁, точки CJ. Стаціонарний режим — перетин прямої Релея з адіабатою. Ліворуч — повна діаграма, праворуч — гілка дефлаграції.</p>
+    <p class="desc" data-i18n="d_hug">Дві адіабати Гюгоніо — з детонаційним і з дефлаграційним набором параметрів продуктів.</p>
     <div class="chart"><div id="chart_full"></div></div>
     <div class="chart"><div id="chart_zoom"></div></div>
     <div class="legend">
-      <span style="--c:var(--accent2)" data-i18n="lg_hug">адіабата Гюгоніо</span>
+      <span style="--c:var(--accent2)" data-i18n="lg_hug_det">адіабата (детонаційний набір)</span>
+      <span style="--c:var(--green)" data-i18n="lg_hug_def">адіабата (дефлаграційний набір)</span>
       <span style="--c:var(--orange)" data-i18n="lg_ray">пряма Релея (u₁)</span>
       <span style="--c:var(--dim)" data-i18n="lg_raycj">прямі Релея CJ (D_CJ, u_CJ,def)</span>
       <span class="dot" style="--c:var(--green)" data-i18n="lg_sol">розв'язок (M₂&lt;1)</span>
@@ -232,7 +239,7 @@
 <div class="panel" id="panel5">
   <div class="card">
     <h2 data-i18n="h_mix">Бібліотека сумішей</h2>
-    <p class="desc" data-i18n="d_mix">Таблиця з файлу mixtures_h2.csv (суміші H₂/O₂ та H₂/повітря). Клік по рядку завантажує суміш в обраний алгоритм. Можна імпортувати власний CSV з тими самими колонками.</p>
+    <p class="desc" data-i18n="d_mix">Таблиця з файлу mixtures_h2_v2.csv.</p>
     <div class="buttons" style="margin-bottom:10px">
       <select id="csv_algo">
         <option value="a3" data-i18n="o_a3">→ Алг. 3 (детонація CJ)</option>
@@ -382,26 +389,51 @@ const gasdyn = (() => {
     const den = g2/(g2-1)*v2 - (v1+v2)/2;
     return num/den;
   }
+  // Two-set classification: the deflagration branch and the detonation branch are evaluated
+  // with their own (q, gamma2, R2) triples, derived from the equilibrium flame state and from
+  // the equilibrium CJ state respectively (see reference-data-methods.md).
+  function classify(m, u1) {
+    const cj = cjDetonation(m.gamma1, m.gamma2_det, m.p1, m.rho1, m.q_det, m.R2_det);
+    if (!cj.ok) return {ok:false, reason:'cj'};
+    const uDef = cjDeflagrationVelocity(m.gamma1, m.gamma2_def, m.p1, m.rho1, m.q_def, cj.D);
+    const det = u => combustionFromU1(m.gamma1, m.gamma2_det, m.p1, m.rho1, m.q_det, u, m.R2_det);
+    const def = u => combustionFromU1(m.gamma1, m.gamma2_def, m.p1, m.rho1, m.q_def, u, m.R2_def);
+    let kind, st, set;
+    if (Math.abs(u1 - cj.D)/cj.D < 1e-6)      { kind='cj_det';     st=det(u1); set='det'; }
+    else if (u1 > cj.D)                        { kind='strong_det'; st=det(u1); set='det'; }
+    else {
+      st = def(u1); set='def';
+      if (!st.ok) kind = 'forbidden';
+      else if (isFinite(uDef) && Math.abs(u1-uDef)/uDef < 1e-6) kind = 'cj_def';
+      else kind = 'weak_def';
+    }
+    return {ok:true, kind, cj, uDef, state:st, set};
+  }
   return {normalShockFromU1, normalShockFromPr, cjDetonation, combustionFromU1, discriminant,
-          cjDeflagrationVelocity, regime, residuals, hugoniotP};
+          cjDeflagrationVelocity, regime, classify, residuals, hugoniotP};
 })();
 if (typeof module !== 'undefined') module.exports = gasdyn;   // for headless tests
 
 /* ===================================================================== UI */
 // --- Mixture library (from paper/mixtures_h2.csv)
-const CSV_COLS = ['mix','gamma1','gamma2','p1','rho1','q','u1','R2','T1','phi','D_CJ','sources'];
+const CSV_COLS = ['mix','phi','comp','p1','T1','gamma1','rho1','q_def','gamma2_def','R2_def','u1','q_det','gamma2_det','R2_det','D_CJ_eq','p_CJ_eq','T_CJ_eq','T_ad','delta_eq'];
+// Mixture library — paper/mixtures_h2_v2.csv.
+// Equilibrium reference (D_CJ_eq, p_CJ_eq, T_CJ_eq, T_ad, delta_eq) and the laminar burning
+// velocity u1 computed with Cantera 3.2.0 on ohn.yaml, the O/H/N submechanism of GRI-Mech 3.0.
+// Two parameter sets per mixture: *_def from the constant-pressure flame state (deflagration
+// branch, regime bounds), *_det from the equilibrium CJ state (detonation branch).
 let mixtures = [
-  {mix:'H2/O2 stoich (phi=1)',gamma1:1.4,gamma2:1.22,p1:101325,rho1:0.500,q:13421000,u1:10.0,R2:461.5,T1:293,phi:1.0,D_CJ:2835,sources:'2H2+O2; D_CJ:SDT Caltech; u1:Lewis&vonElbe'},
-  {mix:'H2/O2 lean (phi=0.5)',gamma1:1.4,gamma2:1.24,p1:101325,rho1:0.707,q:7108000,u1:5.0,R2:366.7,T1:293,phi:0.5,D_CJ:2150,sources:'H2+O2; D_CJ:SDT approx; u1:estimate'},
-  {mix:'H2/O2 rich (phi=2)',gamma1:1.4,gamma2:1.25,p1:101325,rho1:0.333,q:12071000,u1:8.0,R2:830.2,T1:293,phi:2.0,D_CJ:3500,sources:'4H2+O2; D_CJ:SDT approx; u1:estimate'},
-  {mix:'H2/air stoich (phi=1)',gamma1:1.4,gamma2:1.25,p1:101325,rho1:0.870,q:3421000,u1:3.0,R2:338.8,T1:293,phi:1.0,D_CJ:1968,sources:'2H2+O2+3.76N2; D_CJ:SDT; u1:~2.1 Lewis&vonElbe'},
-  {mix:'H2/air lean (phi=0.5)',gamma1:1.4,gamma2:1.27,p1:101325,rho1:1.006,q:1735000,u1:1.0,R2:313.8,T1:293,phi:0.5,D_CJ:1490,sources:'H2+O2+3.76N2; u1:~0.5-1.0'},
-  {mix:'H2/air rich (phi=2)',gamma1:1.4,gamma2:1.26,p1:101325,rho1:0.690,q:3326000,u1:3.0,R2:443.8,T1:293,phi:2.0,D_CJ:2010,sources:'4H2+O2+3.76N2; u1:estimate'},
-  {mix:'H2/O2 stoich p1=5atm',gamma1:1.4,gamma2:1.20,p1:506625,rho1:2.498,q:13421000,u1:12.0,R2:461.5,T1:293,phi:1.0,D_CJ:2900,sources:'High pressure; u1 grows with p'},
-  {mix:'H2/O2 stoich T1=500K',gamma1:1.4,gamma2:1.21,p1:101325,rho1:0.293,q:13421000,u1:15.0,R2:461.5,T1:500,phi:1.0,D_CJ:2950,sources:'High T; u1 grows with T'},
-  {mix:'H2/air stoich p1=3atm',gamma1:1.4,gamma2:1.24,p1:303975,rho1:2.609,q:3421000,u1:4.0,R2:338.8,T1:293,phi:1.0,D_CJ:2050,sources:'High pressure'},
-  {mix:'H2/air phi=0.8',gamma1:1.4,gamma2:1.26,p1:101325,rho1:0.920,q:2780000,u1:2.0,R2:328.0,T1:293,phi:0.8,D_CJ:1780,sources:'Slightly lean; q calculated'},
-  {mix:'H2/air phi=1.5',gamma1:1.4,gamma2:1.26,p1:101325,rho1:0.770,q:3380000,u1:2.8,R2:400.0,T1:293,phi:1.5,D_CJ:1950,sources:'Rich; q calculated'},
+  {mix:"H2/O2 stoich (phi=1)", phi:1.0, comp:"2 H2 + O2", p1:101325, T1:293, gamma1:1.4023, rho1:0.49953, a1:533.34, q_def:7554298, gamma2_def:1.2631, R2_def:559.42, u1:9.9126, q_det:6690156, gamma2_det:1.2596, R2_det:572.86, D_CJ_eq:2838.6, p_CJ_eq:1938515, T_CJ_eq:3682.2, T_ad:3076.3, delta_eq:8.4841},
+  {mix:"H2/O2 lean (phi=0.5)", phi:0.5, comp:"H2 + O2", p1:101325, T1:293, gamma1:1.4005, rho1:0.70736, a1:447.90, q_def:5056311, gamma2_def:1.2638, R2_def:398.64, u1:7.5214, q_det:4446215, gamma2_det:1.2606, R2_det:407.78, D_CJ_eq:2321.2, p_CJ_eq:1836812, T_CJ_eq:3468.2, T_ad:2909.9, delta_eq:8.0982},
+  {mix:"H2/O2 rich (phi=2)", phi:2.0, comp:"4 H2 + O2", p1:101325, T1:293, gamma1:1.4038, rho1:0.33326, a1:653.31, q_def:10088400, gamma2_def:1.2810, R2_def:865.57, u1:8.8341, q_det:8961183, gamma2_det:1.2753, R2_det:884.62, D_CJ_eq:3404.8, p_CJ_eq:1847797, T_CJ_eq:3434.3, T_ad:2824.4, delta_eq:8.0407},
+  {mix:"H2/air stoich (phi=1)", phi:1.0, comp:"2 H2 + O2 + 3.76 N2", p1:101325, T1:293, gamma1:1.4015, rho1:0.86977, a1:404.07, q_def:3187668, gamma2_def:1.2928, R2_def:342.47, u1:2.2530, q_det:2853084, gamma2_det:1.2858, R2_det:347.62, D_CJ_eq:1969.9, p_CJ_eq:1606709, T_CJ_eq:2943.9, T_ad:2377.2, delta_eq:6.9884},
+  {mix:"H2/air lean (phi=0.5)", phi:0.5, comp:"H2 + O2 + 3.76 N2", p1:101325, T1:293, gamma1:1.4007, rho1:1.00621, a1:375.57, q_def:1728340, gamma2_def:1.3280, R2_def:313.87, u1:0.3932, q_det:1685664, gamma2_det:1.3119, R2_det:314.15, D_CJ_eq:1608.9, p_CJ_eq:1208704, T_CJ_eq:2198.1, T_ad:1636.9, delta_eq:5.1021},
+  {mix:"H2/air rich (phi=2)", phi:2.0, comp:"4 H2 + O2 + 3.76 N2", p1:101325, T1:293, gamma1:1.4025, rho1:0.69033, a1:453.71, q_def:3309824, gamma2_def:1.3137, R2_def:444.05, u1:2.9262, q_det:3195078, gamma2_det:1.2988, R2_det:446.08, D_CJ_eq:2143.9, p_CJ_eq:1478408, T_CJ_eq:2717.4, T_ad:2054.9, delta_eq:6.2169},
+  {mix:"H2/O2 stoich p1=5atm", phi:1.0, comp:"2 H2 + O2", p1:506625, T1:293, gamma1:1.4023, rho1:2.49763, a1:533.34, q_def:8219531, gamma2_def:1.2533, R2_def:547.57, u1:11.7894, q_det:7528155, gamma2_det:1.2477, R2_det:558.01, D_CJ_eq:2924.9, p_CJ_eq:10237800, T_CJ_eq:4000.2, T_ad:3294.4, delta_eq:8.8932},
+  {mix:"H2/O2 stoich T1=500K", phi:1.0, comp:"2 H2 + O2", p1:101325, T1:500, gamma1:1.3853, rho1:0.29272, a1:692.48, q_def:7209950, gamma2_def:1.2623, R2_def:566.45, u1:18.7579, q_det:6174822, gamma2_det:1.2627, R2_det:582.91, D_CJ_eq:2779.8, p_CJ_eq:1111412, T_CJ_eq:3605.0, T_ad:3101.2, delta_eq:5.0750},
+  {mix:"H2/air stoich p1=3atm", phi:1.0, comp:"2 H2 + O2 + 3.76 N2", p1:303975, T1:293, gamma1:1.4015, rho1:2.60930, a1:404.07, q_def:3240388, gamma2_def:1.2913, R2_def:341.60, u1:2.0676, q_det:2955190, gamma2_det:1.2830, R2_det:345.93, D_CJ_eq:1991.4, p_CJ_eq:4901373, T_CJ_eq:3017.5, T_ad:2408.6, delta_eq:7.0627},
+  {mix:"H2/air phi=0.8", phi:0.8, comp:"1.6 H2 + O2 + 3.76 N2", p1:101325, T1:293, gamma1:1.4012, rho1:0.91920, a1:393.01, q_def:2688280, gamma2_def:1.3021, R2_def:329.61, u1:1.5821, q_det:2492488, gamma2_det:1.2911, R2_det:332.20, D_CJ_eq:1863.9, p_CJ_eq:1507768, T_CJ_eq:2763.0, T_ad:2163.2, delta_eq:6.4682},
+  {mix:"H2/air phi=1.5", phi:1.5, comp:"3 H2 + O2 + 3.76 N2", p1:101325, T1:293, gamma1:1.4021, rho1:0.76849, a1:429.96, q_def:3332339, gamma2_def:1.3022, R2_def:392.72, u1:3.0038, q_det:3140996, gamma2_det:1.2902, R2_det:395.90, D_CJ_eq:2085.7, p_CJ_eq:1572531, T_CJ_eq:2894.1, T_ad:2240.8, delta_eq:6.6743},
 ];
 
 // --- i18n
@@ -414,14 +446,18 @@ const I18N = {
     h_a2:'Алгоритм 2 — прямий стрибок ущільнення (задано p₂/p₁)', d_a2:'Додаток 1, П.1.49–П.1.51. Умова: p₂/p₁ > 1 (стрибок розрідження не існує).', f_a2:'Вхід: γ, p₁, ρ₁, T₁, p₂/p₁ → Вихід: M₁, u₁, u₂, ρ₂, T₂, M₂',
     h_a3:'Алгоритм 3 — детонація Чепмена–Жуге', d_a3:'Додаток 2, П.2.52–П.2.63. Самопідтримна детонація: продукти рухаються зі швидкістю звуку, u₂ = a₂.', f_a3:'Вхід: γ₁, γ₂, p₁, ρ₁, q, R₂ → Вихід: D_CJ = u₁, p₂, ρ₂, T₂, u₂ = a₂, M₁',
     h_a4:'Алгоритм 4 — дефлаграція (горіння з відомою швидкістю фронту)', d_a4:"Додаток 2, П.2.20–П.2.21 — квадратне рівняння для u₂ розв'язується напряму; p₂ і ρ₂ — із законів збереження. Фізичний корінь — той, що дає дозвукові продукти (M₂ < 1). Показано також відкинутий корінь.", f_a4:'Вхід: γ₁, γ₂, p₁, ρ₁, q, u₁, R₂ → Вихід: u₂, δ = u₂/u₁ = ρ₁/ρ₂, p₂, ρ₂, T₂, M₁, M₂',
-    h_a5:'Режим горіння — класифікація за швидкістю фронту u₁', d_a5:'Для заданої суміші визначаються межі: швидкість дефлаграції Чепмена–Жуге u_CJ,def (верхня межа стаціонарної дефлаграції) і швидкість детонації D_CJ. Між ними стаціонарного фронту не існує (дискримінант D < 0). Це — вихід для системи підтримки прийняття рішень.', f_a5:'Вхід: γ₁, γ₂, p₁, ρ₁, q, R₂, u₁ → Вихід: режим, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, діаграма Гюгоніо',
-    h_hug:'Діаграма Гюгоніо (p–v)', d_hug:'Адіабата детонації (Гюгоніо з тепловиділенням q), пряма Релея для заданого u₁, точки CJ. Стаціонарний режим — перетин прямої Релея з адіабатою. Перша діаграма — повна, друга — гілка дефлаграції.',
+    h_a5:'Режим горіння — класифікація за швидкістю фронту u₁', d_a5:'Для заданої суміші визначаються межі: швидкість дефлаграції Чепмена–Жуге u_CJ,def (верхня межа стаціонарної дефлаграції) і швидкість детонації D_CJ. Між ними стаціонарного фронту не існує (дискримінант D < 0). Це — вихід для системи підтримки прийняття рішень.', f_a5:'Вхід: γ₁, p₁, ρ₁, u₁ + два набори (γ₂, q, R₂) → Вихід: режим, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, діаграма Гюгоніо',
+    h_hug:'Діаграма Гюгоніо (p–v)', d_hug:'Дві адіабати Гюгоніо — з детонаційним і з дефлаграційним набором параметрів продуктів; пряма Релея для заданого u₁; точки CJ. Стаціонарний режим — перетин прямої Релея з адіабатою відповідної гілки. Перша діаграма — повна, друга — гілка дефлаграції.',
     lg_hug:'адіабата Гюгоніо', lg_ray:'пряма Релея (u₁)', lg_raycj:'прямі Релея CJ (D_CJ, u_CJ,def)', lg_sol:"розв'язок (M₂<1)", lg_rej:'відкинутий корінь', lg_cj:'точки CJ',
-    h_mix:'Бібліотека сумішей', d_mix:'Таблиця з файлу mixtures_h2.csv (суміші H₂/O₂ та H₂/повітря). Клік по рядку завантажує суміш в обраний алгоритм. Можна імпортувати власний CSV з тими самими колонками.',
+    h_mix:'Бібліотека сумішей', d_mix:'Таблиця з файлу mixtures_h2_v2.csv (суміші H₂/O₂ та H₂/повітря). Рівноважні довідкові величини (D_CJ, p_CJ, T_CJ, T_ad, δ) і ламінарна швидкість горіння u₁ пораховані в Cantera 3.2.0 на механізмі ohn.yaml (підмеханізм O/H/N з GRI-Mech 3.0). Кожна суміш має два набори (q, γ₂, R₂): дефлаграційний і детонаційний. Клік по рядку завантажує суміш в обраний алгоритм.',
     o_a3:'→ Алг. 3 (детонація CJ)', o_a4:'→ Алг. 4 (дефлаграція)', o_a5:'→ Режим горіння', btn_import:'⬆ Імпорт CSV', btn_exportmix:'⬇ Експорт сумішей CSV',
-    h_batch:'Таблиці результатів для всіх сумішей', d_batch:'Відтворює таблиці статті: Таблиця 1 — детонація CJ (розрахунок vs довідкове D_CJ), Таблиця 2 — дефлаграція при ламінарній швидкості u₁ і відкинутий другий корінь, Таблиця 3 — межі режимів.',
+    h_batch:'Таблиці результатів для всіх сумішей', d_batch:"Відтворює таблиці статті: Таблиця 1 — детонація CJ проти рівноважного розрахунку, Таблиця 2 — дефлаграція при ламінарній швидкості горіння проти рівноважного полум'я, Таблиця 3 — межі режимів.",
     btn_calcall:'Обчислити всі рядки', btn_md:'Markdown', btn_csv:'CSV', h_about:'Модель та її межі', h_legend:'Позначення',
     preset:'— завантажити суміш —', rows:'рядків', verify:'Перевірка законів збереження',
+    d_sets:"Два набори параметрів продуктів: для гілки дефлаграції вони беруться зі стану полум'я при сталому тиску, для гілки детонації — зі стану CJ (див. reference-data-methods.md). Пресети заповнюють обидва.",
+    u_defset:'(дефлаграція)', u_detset:'(детонація)',
+    set_used:'Використано набір параметрів: {s}.', set_def:'дефлаграційний', set_det:'детонаційний',
+    lg_hug_det:'адіабата (детонаційний набір)', lg_hug_def:'адіабата (дефлаграційний набір)',
     mass:'Маса: ρ₁u₁ = ρ₂u₂', mom:'Імпульс: p₁+ρ₁u₁² = p₂+ρ₂u₂²', en:'Енергія: h₁+u₁²/2 (+q) = h₂+u₂²/2', cjc:'CJ: u₂² = γ₂p₂/ρ₂',
     err_M1:'M₁ ≤ 1 — стрибок ущільнення не існує (це був би стрибок розрідження, що суперечить другому закону термодинаміки). Потрібно u₁ > a₁ = ',
     err_pr:'p₂/p₁ ≤ 1 — стрибок розрідження не існує. Задайте p₂/p₁ > 1.',
@@ -433,7 +469,7 @@ const I18N = {
     r_weak_def:'Слабка дефлаграція', r_cj_def:'Дефлаграція Чепмена–Жуге', r_forbidden:'Заборонена зона — стаціонарного фронту немає', r_cj_det:'Детонація Чепмена–Жуге', r_strong_det:'Пересжата (сильна) детонація',
     r_bounds:'Межі для цієї суміші: стаціонарна дефлаграція при u₁ ≤ u_CJ,def = {a} м/с; детонація при u₁ ≥ D_CJ = {b} м/с; між ними — заборонена зона.',
     l_uDef:'u_CJ,def (м/с)', l_DCJ:'D_CJ (м/с)', l_pr:'p₂/p₁', l_regime:'Режим',
-    t1:'Таблиця 1. Детонація CJ: розрахунок vs довідкове значення', t2:'Таблиця 2. Дефлаграція при ламінарній швидкості u₁ (фізичний корінь) і відкинутий другий корінь', t3:'Таблиця 3. Межі режимів',
+    t1:'Таблиця 1. Детонація CJ: замкнена формула проти рівноважного розрахунку', t2:"Таблиця 2. Дефлаграція при ламінарній швидкості горіння: модель проти рівноважного полум'я, і відкинутий корінь", t3:'Таблиця 3. Межі режимів',
     c_mix:'Суміш', c_dev:'відх., %', c_res:'макс. нев’язка', c_r2:'2-й корінь',
     ax_v:'v/v₁', ax_p:'p/p₁', zoom:'гілка дефлаграції', full:'повна діаграма', rej_out:'2-й корінь поза діаграмою: v/v₁ = {v}, p/p₁ = {p}', no_int:'немає перетину — заборонена зона',
     foot:'Формули: Додатки 1–2 (нормальний стрибок, П.2.20; CJ П.2.52–П.2.63) з виправленнями; усі результати перевіряються законами збереження. Джерело істини — paper/results_table.py.',
@@ -446,14 +482,18 @@ const I18N = {
     h_a2:'Algorithm 2 — normal shock (given p₂/p₁)', d_a2:'Appendix 1, eqs. A1.49–A1.51. Requires p₂/p₁ > 1 (no expansion shocks).', f_a2:'Input: γ, p₁, ρ₁, T₁, p₂/p₁ → Output: M₁, u₁, u₂, ρ₂, T₂, M₂',
     h_a3:'Algorithm 3 — Chapman–Jouguet detonation', d_a3:'Appendix 2, eqs. A2.52–A2.63. Self-sustained detonation: products leave at the speed of sound, u₂ = a₂.', f_a3:'Input: γ₁, γ₂, p₁, ρ₁, q, R₂ → Output: D_CJ = u₁, p₂, ρ₂, T₂, u₂ = a₂, M₁',
     h_a4:'Algorithm 4 — deflagration (given front velocity)', d_a4:'Appendix 2, eqs. A2.20–A2.21 — the quadratic for u₂ is solved directly; p₂ and ρ₂ follow from the conservation laws. The physical root is the one with subsonic products (M₂ < 1). The rejected root is shown as well.', f_a4:'Input: γ₁, γ₂, p₁, ρ₁, q, u₁, R₂ → Output: u₂, δ = u₂/u₁ = ρ₁/ρ₂, p₂, ρ₂, T₂, M₁, M₂',
-    h_a5:'Combustion regime — classification by front velocity u₁', d_a5:'For a given mixture the bounds are computed: the CJ deflagration velocity u_CJ,def (upper limit of stationary deflagration) and the detonation velocity D_CJ. Between them no stationary front exists (discriminant D < 0). This is the decision-support output.', f_a5:'Input: γ₁, γ₂, p₁, ρ₁, q, R₂, u₁ → Output: regime, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, Hugoniot diagram',
-    h_hug:'Hugoniot diagram (p–v)', d_hug:'Detonation adiabat (Hugoniot with heat release q), Rayleigh line for the given u₁, CJ points. A stationary regime is an intersection of the Rayleigh line with the adiabat. First chart — full diagram, second — deflagration branch.',
+    h_a5:'Combustion regime — classification by front velocity u₁', d_a5:'For a given mixture the bounds are computed: the CJ deflagration velocity u_CJ,def (upper limit of stationary deflagration) and the detonation velocity D_CJ. Between them no stationary front exists (discriminant D < 0). This is the decision-support output.', f_a5:'Input: γ₁, p₁, ρ₁, u₁ + two (γ₂, q, R₂) sets → Output: regime, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, Hugoniot diagram',
+    h_hug:'Hugoniot diagram (p–v)', d_hug:'Two Hugoniot adiabats — one per product parameter set (detonation and deflagration); the Rayleigh line for the given u₁; the CJ points. A stationary regime is an intersection of the Rayleigh line with the adiabat of the corresponding branch. First chart — full diagram, second — deflagration branch.',
     lg_hug:'Hugoniot adiabat', lg_ray:'Rayleigh line (u₁)', lg_raycj:'CJ Rayleigh lines (D_CJ, u_CJ,def)', lg_sol:'solution (M₂<1)', lg_rej:'rejected root', lg_cj:'CJ points',
-    h_mix:'Mixture library', d_mix:'Table from mixtures_h2.csv (H₂/O₂ and H₂/air mixtures). Click a row to load it into the selected algorithm. A custom CSV with the same columns can be imported.',
+    h_mix:'Mixture library', d_mix:'Table from mixtures_h2_v2.csv (H₂/O₂ and H₂/air mixtures). The equilibrium reference quantities (D_CJ, p_CJ, T_CJ, T_ad, δ) and the laminar burning velocity u₁ are computed with Cantera 3.2.0 on ohn.yaml, the O/H/N submechanism of GRI-Mech 3.0. Each mixture carries two (q, γ₂, R₂) sets, one per branch. Click a row to load it into the selected algorithm.',
     o_a3:'→ Alg. 3 (CJ detonation)', o_a4:'→ Alg. 4 (deflagration)', o_a5:'→ Combustion regime', btn_import:'⬆ Import CSV', btn_exportmix:'⬇ Export mixtures CSV',
-    h_batch:'Result tables for all mixtures', d_batch:'Reproduces the paper tables: Table 1 — CJ detonation (computed vs reference D_CJ), Table 2 — deflagration at the laminar burning velocity u₁ and the rejected second root, Table 3 — regime bounds.',
+    h_batch:'Result tables for all mixtures', d_batch:'Reproduces the paper tables: Table 1 — CJ detonation against the equilibrium computation, Table 2 — deflagration at the laminar burning velocity against the equilibrium flame, Table 3 — regime bounds.',
     btn_calcall:'Compute all rows', btn_md:'Markdown', btn_csv:'CSV', h_about:'Model and its limits', h_legend:'Notation',
     preset:'— load mixture —', rows:'rows', verify:'Conservation-law check',
+    d_sets:'Two sets of product parameters: the deflagration branch takes them from the constant-pressure flame state, the detonation branch from the CJ state (see reference-data-methods.md). Presets fill both.',
+    u_defset:'(deflagration)', u_detset:'(detonation)',
+    set_used:'Parameter set used: {s}.', set_def:'deflagration', set_det:'detonation',
+    lg_hug_det:'adiabat (detonation set)', lg_hug_def:'adiabat (deflagration set)',
     mass:'Mass: ρ₁u₁ = ρ₂u₂', mom:'Momentum: p₁+ρ₁u₁² = p₂+ρ₂u₂²', en:'Energy: h₁+u₁²/2 (+q) = h₂+u₂²/2', cjc:'CJ: u₂² = γ₂p₂/ρ₂',
     err_M1:'M₁ ≤ 1 — no compression shock exists (an expansion shock would violate the second law). Need u₁ > a₁ = ',
     err_pr:'p₂/p₁ ≤ 1 — expansion shocks do not exist. Set p₂/p₁ > 1.',
@@ -465,7 +505,7 @@ const I18N = {
     r_weak_def:'Weak deflagration', r_cj_def:'Chapman–Jouguet deflagration', r_forbidden:'Forbidden zone — no stationary front', r_cj_det:'Chapman–Jouguet detonation', r_strong_det:'Overdriven (strong) detonation',
     r_bounds:'Bounds for this mixture: stationary deflagration for u₁ ≤ u_CJ,def = {a} m/s; detonation for u₁ ≥ D_CJ = {b} m/s; forbidden zone in between.',
     l_uDef:'u_CJ,def (m/s)', l_DCJ:'D_CJ (m/s)', l_pr:'p₂/p₁', l_regime:'Regime',
-    t1:'Table 1. CJ detonation: computed vs reference', t2:'Table 2. Weak deflagration at the laminar burning velocity u₁ (physical root) and the rejected second root', t3:'Table 3. Regime bounds',
+    t1:'Table 1. CJ detonation: closed form vs equilibrium computation', t2:'Table 2. Weak deflagration at the laminar burning velocity: model vs equilibrium flame, and the rejected root', t3:'Table 3. Regime bounds',
     c_mix:'Mixture', c_dev:'dev., %', c_res:'max residual', c_r2:'2nd root',
     ax_v:'v/v₁', ax_p:'p/p₁', zoom:'deflagration branch', full:'full diagram', rej_out:'2nd root off-chart: v/v₁ = {v}, p/p₁ = {p}', no_int:'no intersection — forbidden zone',
     foot:'Formulas: Appendices 1–2 (normal shock; A2.20; CJ A2.52–A2.63) with corrections; every result is checked against the conservation laws. Source of truth: paper/results_table.py.',
@@ -592,38 +632,54 @@ function calc4() {
 }
 // --- Regime
 function calc5() {
-  const g1=V('a5_g1'),g2=V('a5_g2'),p1=V('a5_p1'),r1=V('a5_r1'),q=V('a5_q'),R2=V('a5_R2'),u1=V('a5_u1');
-  if (!valid([p1,r1,q,u1,R2],[g1,g2])) { document.getElementById('res5_regime').innerHTML=`<div class="alert alert-red">${T('err_input')}</div>`; document.getElementById('res5').classList.add('show'); return; }
-  const R = gasdyn.regime(g1,g2,p1,r1,q,R2,u1);
+  const m = {gamma1:V('a5_g1'), p1:V('a5_p1'), rho1:V('a5_r1'),
+             gamma2_def:V('a5_g2def'), q_def:V('a5_qdef'), R2_def:V('a5_R2def'),
+             gamma2_det:V('a5_g2det'), q_det:V('a5_qdet'), R2_det:V('a5_R2det')};
+  const u1 = V('a5_u1');
   const box = document.getElementById('res5_regime');
   document.getElementById('res5').classList.add('show');
+  if (!valid([m.p1,m.rho1,m.q_def,m.q_det,u1,m.R2_def,m.R2_det],[m.gamma1,m.gamma2_def,m.gamma2_det])) {
+    box.innerHTML=`<div class="alert alert-red">${T('err_input')}</div>`; return; }
+  const R = gasdyn.classify(m, u1);
   if (!R.ok) { box.innerHTML=`<div class="alert alert-red">${T('err_cj')}</div>`; return; }
   const colors = {weak_def:'var(--green)', cj_def:'var(--blue)', forbidden:'var(--red)', cj_det:'var(--pink)', strong_det:'var(--orange)'};
   const bounds = T('r_bounds').replace('{a}', R.uDef.toFixed(2)).replace('{b}', R.cj.D.toFixed(1));
-  box.innerHTML = `<div class="regime-badge" style="background:${colors[R.kind]};color:#0f1117">${T('r_'+R.kind)}</div><div class="alert alert-blue">${bounds}</div>`;
-  const items = [[T('l_regime'), T('r_'+R.kind), `u₁ = ${fmt(u1)} m/s, M₁ = ${fmt(u1/Math.sqrt(g1*p1/r1))}`], [T('l_uDef'), R.uDef, `M₁ = ${fmt(R.uDef/Math.sqrt(g1*p1/r1))}`], [T('l_DCJ'), R.cj.D, `M₁ = ${fmt(R.cj.M1)}`]];
+  box.innerHTML = `<div class="regime-badge" style="background:${colors[R.kind]};color:#0f1117">${T('r_'+R.kind)}</div>`
+    + `<div class="alert alert-blue">${bounds}</div>`
+    + `<div class="alert alert-orange">${T('set_used').replace('{s}', T('set_'+R.set))}</div>`;
+  const a1 = Math.sqrt(m.gamma1*m.p1/m.rho1);
+  const items = [[T('l_regime'), T('r_'+R.kind), `u₁ = ${fmt(u1)} m/s, M₁ = ${fmt(u1/a1)}`],
+                 [T('l_uDef'), R.uDef, `M₁ = ${fmt(R.uDef/a1)}`],
+                 [T('l_DCJ'), R.cj.D, `M₁ = ${fmt(R.cj.M1)}`]];
+  const set = R.set === 'det' ? {g2:m.gamma2_det, q:m.q_det, R2:m.R2_det} : {g2:m.gamma2_def, q:m.q_def, R2:m.R2_def};
   if (R.state.ok) {
-    const s = R.state;
-    items.push([T('l_delta'), s.delta, ''], [T('l_M2'), s.M2, s.M2<1?'M₂ < 1':'M₂ ≥ 1'], [T('l_pr'), s.p2/p1, `p₂ = ${fmt(s.p2)} Pa`], [T('l_T2'), s.T2, '']);
+    const st = R.state;
+    items.push([T('l_delta'), st.delta, ''], [T('l_M2'), st.M2, st.M2<1?'M₂ < 1':'M₂ ≥ 1'],
+               [T('l_pr'), st.p2/m.p1, `p₂ = ${fmt(st.p2)} Pa`], [T('l_T2'), st.T2, '']);
     document.getElementById('res5_grid').innerHTML = items.map(([l,v,r]) => `<div class="result-item"><div class="label">${l}</div><div class="value">${typeof v==='number'?fmt(v):v}</div>${r?'<div class="ratio">'+r+'</div>':''}</div>`).join('');
-    showVerify('res5', [[T('mass'), r1*u1, s.r2*s.u2],[T('mom'), p1+r1*u1*u1, s.p2+s.r2*s.u2*s.u2],[T('en'), g1/(g1-1)*p1/r1+u1*u1/2+q, g2/(g2-1)*s.p2/s.r2+s.u2*s.u2/2]]);
+    showVerify('res5', [[T('mass'), m.rho1*u1, st.r2*st.u2],
+                        [T('mom'), m.p1+m.rho1*u1*u1, st.p2+st.r2*st.u2*st.u2],
+                        [T('en'), m.gamma1/(m.gamma1-1)*m.p1/m.rho1+u1*u1/2+set.q, set.g2/(set.g2-1)*st.p2/st.r2+st.u2*st.u2/2]]);
   } else {
     items.push([T('l_Dv'), R.state.D, 'D < 0']);
     document.getElementById('res5_grid').innerHTML = items.map(([l,v,r]) => `<div class="result-item"><div class="label">${l}</div><div class="value">${typeof v==='number'?fmt(v):v}</div>${r?'<div class="ratio">'+r+'</div>':''}</div>`).join('');
     document.getElementById('res5_verify').innerHTML = '';
   }
-  drawHugoniot(g1,g2,p1,r1,q,R2,u1,R);
+  drawHugoniot(m, u1, R);
 }
 
 // --- Hugoniot diagram (SVG, normalized p/p1 vs v/v1)
-function drawHugoniot(g1,g2,p1,r1,q,R2,u1,R) {
-  const v1 = 1/r1;
-  const H = x => gasdyn.hugoniotP(g1,g2,p1,v1,q,x*v1)/p1;          // x = v/v1
+function drawHugoniot(m, u1, R) {
+  // Two adiabats: the branches carry different (q, gamma2), so each is drawn with its own set.
+  const g1 = m.gamma1, p1 = m.p1, r1 = m.rho1, v1 = 1/r1;
+  const Hdet = x => gasdyn.hugoniotP(g1, m.gamma2_det, p1, v1, m.q_det, x*v1)/p1;
+  const Hdef = x => gasdyn.hugoniotP(g1, m.gamma2_def, p1, v1, m.q_def, x*v1)/p1;
   const ray = (u, x) => 1 + (r1*u*u/p1)*(1 - x);                     // Rayleigh line: p/p1 = 1 + ρ1u²/p1 (1 − v/v1)
-  const xmin = (g2-1)/(g2+1)*1.0001;                                  // asymptote of the adiabat
-  const x0 = 2*g1/(g1-1) + 2*q*r1/p1 - 1;                             // where Hugoniot crosses p = 0
+  const xminDet = (m.gamma2_det-1)/(m.gamma2_det+1)*1.0001;           // asymptotes of the adiabats
+  const xminDef = (m.gamma2_def-1)/(m.gamma2_def+1)*1.0001;
+  const x0 = 2*g1/(g1-1) + 2*m.q_def*r1/p1 - 1;                       // where the deflagration adiabat crosses p = 0
   const cjDet = {x: (1/R.cj.r2)/v1, y: R.cj.p2/p1};
-  const defCJ = gasdyn.combustionFromU1(g1,g2,p1,r1,q,R.uDef,R2);
+  const defCJ = gasdyn.combustionFromU1(g1, m.gamma2_def, p1, r1, m.q_def, R.uDef, m.R2_def);
   const cjDef = defCJ.ok ? {x: defCJ.delta, y: defCJ.p2/p1} : null;
   const st = R.state.ok ? R.state : null;
 
@@ -647,16 +703,20 @@ function drawHugoniot(g1,g2,p1,r1,q,R2,u1,R) {
     s += `<text x="${m.l}" y="${m.t-10}" fill="#e4e4e7" font-size="12">${title}</text>`;
     // clip
     s += `<defs><clipPath id="clip${w}${h}${logx?'L':''}"><rect x="${m.l}" y="${m.t}" width="${W}" height="${Hh}"/></clipPath></defs><g clip-path="url(#clip${w}${h}${logx?'L':''})">`;
-    // Hugoniot
-    const N = 600; let d = '', pen = false;
-    for (let i=0;i<=N;i++) {
-      const x = logx ? Math.pow(10, Math.log10(xr[0]) + (Math.log10(xr[1])-Math.log10(xr[0]))*i/N) : xr[0] + (xr[1]-xr[0])*i/N;
-      if (x <= xmin) { pen=false; continue; }
-      const y = H(x);
-      if (!isFinite(y) || y > yr[1]*3 || y < yr[0]-Math.abs(yr[1])*3) { pen=false; continue; }
-      d += (pen?'L':'M') + fx(x).toFixed(1) + ' ' + fy(y).toFixed(1) + ' '; pen = true;
-    }
-    s += `<path d="${d}" fill="none" stroke="#818cf8" stroke-width="2"/>`;
+    // Hugoniot adiabats — detonation set and deflagration set
+    const curve = (H, xmin) => {
+      const N = 600; let d = '', pen = false;
+      for (let i=0;i<=N;i++) {
+        const x = logx ? Math.pow(10, Math.log10(xr[0]) + (Math.log10(xr[1])-Math.log10(xr[0]))*i/N) : xr[0] + (xr[1]-xr[0])*i/N;
+        if (x <= xmin) { pen=false; continue; }
+        const y = H(x);
+        if (!isFinite(y) || y > yr[1]*3 || y < yr[0]-Math.abs(yr[1])*3) { pen=false; continue; }
+        d += (pen?'L':'M') + fx(x).toFixed(1) + ' ' + fy(y).toFixed(1) + ' '; pen = true;
+      }
+      return d;
+    };
+    s += `<path d="${curve(Hdet, xminDet)}" fill="none" stroke="#818cf8" stroke-width="2"/>`;
+    s += `<path d="${curve(Hdef, xminDef)}" fill="none" stroke="#34d399" stroke-width="1.6" stroke-dasharray="7,3" opacity="0.9"/>`;
     // Rayleigh lines
     const line = (u, color, width, dash) => {
       // sampled polyline so the straight line stays correct on a log axis
@@ -705,7 +765,16 @@ function renderMixtures() {
 function loadPreset(prefix, idx) {
   if (idx === '') return;
   const r = mixtures[+idx];
-  const map = {g1:'gamma1', g2:'gamma2', p1:'p1', r1:'rho1', q:'q', u1:'u1', R2:'R2'};
+  // tab 3 (CJ detonation) takes the detonation set, tab 4 (deflagration) the deflagration set,
+  // tab 5 (regime) both.
+  const maps = {
+    a3: {g1:'gamma1', g2:'gamma2_det', p1:'p1', r1:'rho1', q:'q_det', R2:'R2_det'},
+    a4: {g1:'gamma1', g2:'gamma2_def', p1:'p1', r1:'rho1', q:'q_def', R2:'R2_def', u1:'u1'},
+    a5: {g1:'gamma1', p1:'p1', r1:'rho1', u1:'u1',
+         g2def:'gamma2_def', qdef:'q_def', R2def:'R2_def',
+         g2det:'gamma2_det', qdet:'q_det', R2det:'R2_det'},
+  };
+  const map = maps[prefix] || maps.a4;
   Object.entries(map).forEach(([k,c]) => { const el = document.getElementById(prefix+'_'+k); if (el && r[c]!==undefined) el.value = r[c]; });
 }
 function loadRow(i) {
@@ -742,24 +811,38 @@ let batch = null;
 function computeBatch() {
   const t1 = [], t2 = [], t3 = [];
   mixtures.forEach((r,i) => {
-    const {gamma1:g1, gamma2:g2, p1, rho1:r1, q, u1, R2, T1, D_CJ} = r;
-    const cj = gasdyn.cjDetonation(g1,g2,p1,r1,q,R2);
+    const g1 = r.gamma1, p1 = r.p1, r1 = r.rho1, u1 = r.u1;
+    // Table 1 — detonation branch (detonation parameter set) against the equilibrium reference
+    const cj = gasdyn.cjDetonation(g1, r.gamma2_det, p1, r1, r.q_det, r.R2_det);
     if (cj.ok) {
-      const res = gasdyn.residuals(g1,g2,p1,r1,cj.u1,q,cj.p2,cj.r2,cj.u2).max;
-      t1.push([i+1, r.mix, (p1/1000).toFixed(1), T1?.toFixed(0)??'', cj.u1.toFixed(0), D_CJ?D_CJ.toFixed(0):'', D_CJ?((cj.u1/D_CJ-1)*100).toFixed(1):'', (cj.p2/p1).toFixed(1), (cj.r2/r1).toFixed(3), cj.T2.toFixed(0), res.toExponential(0)]);
-    } else t1.push([i+1, r.mix, '', '', 'n/a', '', '', '', '', '', '']);
-    const d = gasdyn.combustionFromU1(g1,g2,p1,r1,q,u1,R2);
+      const res = gasdyn.residuals(g1, r.gamma2_det, p1, r1, cj.u1, r.q_det, cj.p2, cj.r2, cj.u2).max;
+      t1.push([i+1, r.mix, (p1/1000).toFixed(1), r.T1.toFixed(0),
+               cj.u1.toFixed(0), r.D_CJ_eq.toFixed(0), ((cj.u1/r.D_CJ_eq-1)*100).toFixed(2),
+               (cj.p2/p1).toFixed(2), (r.p_CJ_eq/p1).toFixed(2), ((cj.p2/r.p_CJ_eq-1)*100).toFixed(1),
+               cj.T2.toFixed(0), r.T_CJ_eq.toFixed(0), res.toExponential(0)]);
+    } else t1.push([i+1, r.mix, '', '', 'n/a', '', '', '', '', '', '', '', '']);
+    // Table 2 — deflagration branch (deflagration parameter set) at the laminar burning velocity
+    const d = gasdyn.combustionFromU1(g1, r.gamma2_def, p1, r1, r.q_def, u1, r.R2_def);
     const M1 = u1/Math.sqrt(g1*p1/r1);
-    if (d.ok) t2.push([i+1, r.mix, u1.toFixed(1), M1.toFixed(4), d.delta.toFixed(2), d.M2.toFixed(3), (d.p2/p1).toFixed(5), d.T2.toFixed(0), d.root2.delta.toFixed(0), isNaN(d.root2.M2)?'nan':d.root2.M2.toFixed(2), (d.root2.p2/p1).toFixed(3)]);
-    else t2.push([i+1, r.mix, u1.toFixed(1), M1.toFixed(4), 'D<0', '', '', '', '', '', '']);
-    const R = gasdyn.regime(g1,g2,p1,r1,q,R2,u1);
-    if (R.ok) t3.push([i+1, r.mix, u1.toFixed(1), R.uDef.toFixed(2), R.cj.D.toFixed(0), (R.uDef/Math.sqrt(g1*p1/r1)).toFixed(4), I18N.en['r_'+R.kind]]);
-    else t3.push([i+1, r.mix, u1.toFixed(1), '', '', '', 'n/a']);
+    if (d.ok) t2.push([i+1, r.mix, u1.toFixed(3), M1.toFixed(4),
+                       d.delta.toFixed(3), r.delta_eq.toFixed(3), ((d.delta/r.delta_eq-1)*100).toFixed(2),
+                       d.M2.toFixed(3), (d.p2/p1).toFixed(5),
+                       d.T2.toFixed(0), r.T_ad.toFixed(0),
+                       d.root2.delta.toFixed(0), (d.root2.p2/p1).toFixed(3)]);
+    else t2.push([i+1, r.mix, u1.toFixed(3), M1.toFixed(4), 'D<0', '', '', '', '', '', '', '', '']);
+    // Table 3 — regime bounds (two-set classification)
+    const R = gasdyn.classify(r, u1);
+    if (R.ok) t3.push([i+1, r.mix, u1.toFixed(3), R.uDef.toFixed(2), (R.uDef/Math.sqrt(g1*p1/r1)).toFixed(4),
+                       R.cj.D.toFixed(0), r.D_CJ_eq.toFixed(0), I18N.en['r_'+R.kind]]);
+    else t3.push([i+1, r.mix, u1.toFixed(3), '', '', '', '', 'n/a']);
   });
   return {
-    t1: {title:T('t1'), cols:['#', T('c_mix'), 'p1, kPa', 'T1, K', 'D_CJ calc, m/s', 'D_CJ ref, m/s', T('c_dev'), 'p2/p1', 'rho2/rho1', 'T2, K', T('c_res')], rows:t1},
-    t2: {title:T('t2'), cols:['#', T('c_mix'), 'u1, m/s', 'M1', 'delta=u2/u1', 'M2', 'p2/p1', 'T2, K', T('c_r2')+': u2/u1', T('c_r2')+': M2', T('c_r2')+': p2/p1'], rows:t2},
-    t3: {title:T('t3'), cols:['#', T('c_mix'), 'u1, m/s', 'u_CJ,def, m/s', 'D_CJ, m/s', 'M1 at u_CJ,def', T('l_regime')], rows:t3},
+    t1: {title:T('t1'), cols:['#', T('c_mix'), 'p1, kPa', 'T1, K', 'D model, m/s', 'D eq, m/s', T('c_dev'),
+                              'p2/p1 model', 'p2/p1 eq', T('c_dev'), 'T2 model, K', 'T2 eq, K', T('c_res')], rows:t1},
+    t2: {title:T('t2'), cols:['#', T('c_mix'), 'u1 = S_L, m/s', 'M1', 'delta model', 'delta eq', T('c_dev'),
+                              'M2', 'p2/p1', 'T2 model, K', 'T_ad eq, K', T('c_r2')+': u2/u1', T('c_r2')+': p2/p1'], rows:t2},
+    t3: {title:T('t3'), cols:['#', T('c_mix'), 'u1 = S_L, m/s', 'u_CJ,def, m/s', 'M1 at u_CJ,def',
+                              'D_CJ model, m/s', 'D_CJ eq, m/s', T('l_regime')], rows:t3},
   };
 }
 function calcAll() {
@@ -784,7 +867,9 @@ function exportBatch(kind) {
 // --- About
 function renderAbout() {
   const uk = `
-<p>Модель: одновимірний стаціонарний фронт в ідеальному газі зі сталими показниками адіабати γ₁ (реагенти) і γ₂ (продукти) та питомим тепловиділенням q. Усі режими — розв'язки системи законів збереження маси, імпульсу та енергії (П.2.20). Дисоціація продуктів і залежність γ₂ від температури не враховуються, тому для гарячих сумішей H₂/O₂ швидкість детонації завищується (≈ +28 % при стехіометрії), а для H₂/повітря похибка менша за 1 %.</p>
+<p>Модель: одновимірний стаціонарний фронт в ідеальному газі зі сталими показниками адіабати γ₁ (реагенти) і γ₂ (продукти) та питомим тепловиділенням q. Усі режими — розв'язки системи законів збереження маси, імпульсу та енергії.</p>
+<p style="margin-top:10px"><b>Звідки беруться параметри продуктів.</b> У моделі рівняння енергії записане через сталі теплоємності, тоді як реальний баланс — через абсолютні ентальпії. Якщо прийняти q = h₁(T₁) − h₂(T₁), де продукти взяті в рівноважному складі цільового стану, то ефективна теплоємність продуктів визначається однозначно: c<sub>p2</sub> = [c<sub>p1</sub>(T₁)·T₁ + h₂(T₂) − h₂(T₁)]/T₂, а γ₂ = c<sub>p2</sub>/(c<sub>p2</sub> − R₂). Тобто γ₂ — не табличний «ефективний показник», а той, що прирівнює ентальпію продуктів моделі до реальної. Оскільки гілки закінчуються при різних температурах, кожна суміш має <b>два набори</b> (q, γ₂, R₂): за станом полум'я при сталому тиску — для дефлаграції, за станом CJ — для детонації. Обидва рахуються офлайн один раз у Cantera; в реальному часі виконується тільки алгебра.</p>
+<p style="margin-top:10px"><b>Точність.</b> З такими параметрами замкнена формула відтворює рівноважну швидкість детонації з похибкою 0.06–0.23 %, ступінь розширення δ — 0.5 %, температуру продуктів дефлаграції — 0.06 %. Тиск у точці CJ модель систематично занижує на 3–6 %, тож для оцінок надлишкового тиску вона консервативна. Якщо ж годувати її нижчою теплотою згоряння і підібраним «на око» γ₂, похибка швидкості детонації сягає +28 % — саме це, а не сталість γ, було причиною старих розбіжностей.</p>
 <p style="margin-top:10px"><b>Виправлення щодо вихідних формул Додатка 2</b> (усі перевірені законами збереження, нев'язка ~10⁻¹⁶):</p>
 <ol style="margin:6px 0 0 22px">
 <li>Явний вираз для дискримінанта (П.2.64–П.2.65 і похідні П.2.67–П.2.70, П.2.73–П.2.75) містить помилку в коефіцієнті при 1/M₁²; його використання порушує закон збереження енергії на 20–60 %. Калькулятор розв'язує квадратне рівняння П.2.21 напряму.</li>
@@ -793,7 +878,9 @@ function renderAbout() {
 </ol>
 <p style="margin-top:10px">Класифікація режимів: для заданого u₁ дискримінант D(u₁) додатний при u₁ ≤ u_CJ,def (слабка дефлаграція) і при u₁ ≥ D_CJ (детонація; при u₁ &gt; D_CJ — пересжата, продукти дозвукові), від'ємний між ними — стаціонарного фронту немає.</p>`;
   const en = `
-<p>Model: one-dimensional stationary front in an ideal gas with constant ratios of specific heats γ₁ (reactants) and γ₂ (products) and specific heat release q. All regimes are solutions of the mass, momentum and energy conservation system (A2.20). Dissociation of products and the temperature dependence of γ₂ are neglected, so the detonation velocity of hot H₂/O₂ mixtures is overestimated (≈ +28 % at stoichiometry), while for H₂/air the error is below 1 %.</p>
+<p>Model: one-dimensional stationary front in an ideal gas with constant ratios of specific heats γ₁ (reactants) and γ₂ (products) and specific heat release q. All regimes are solutions of the mass, momentum and energy conservation system.</p>
+<p style="margin-top:10px"><b>Where the product parameters come from.</b> The model writes the energy equation with constant specific heats, whereas the real balance is written with absolute enthalpies. Taking q = h₁(T₁) − h₂(T₁), with the products at the equilibrium composition of the target state, fixes the effective product heat capacity uniquely: c<sub>p2</sub> = [c<sub>p1</sub>(T₁)·T₁ + h₂(T₂) − h₂(T₁)]/T₂, and γ₂ = c<sub>p2</sub>/(c<sub>p2</sub> − R₂). So γ₂ is not a tabulated "effective exponent" but the one that makes the model's product enthalpy equal the real one. Because the two branches end at very different temperatures, every mixture carries <b>two sets</b> of (q, γ₂, R₂): from the constant-pressure flame state for deflagration, from the CJ state for detonation. Both are computed offline once with Cantera; at run time only the algebra is evaluated.</p>
+<p style="margin-top:10px"><b>Accuracy.</b> With these parameters the closed form reproduces the equilibrium detonation velocity within 0.06–0.23 %, the expansion ratio δ within 0.5 %, and the deflagration product temperature within 0.06 %. The CJ pressure is systematically underestimated by 3–6 %, so overpressure estimates are conservative. Fed instead with the lower heating value and a hand-picked γ₂, the same formula misses the detonation velocity by up to +28 % — that, and not the constant-γ assumption, was the cause of the earlier discrepancies.</p>
 <p style="margin-top:10px"><b>Corrections to the source formulas of Appendix 2</b> (all verified by the conservation laws, residual ~10⁻¹⁶):</p>
 <ol style="margin:6px 0 0 22px">
 <li>The explicit discriminant (A2.64–A2.65 and the derived A2.67–A2.70, A2.73–A2.75) has a wrong coefficient of the 1/M₁² term; using it violates energy conservation by 20–60 %. The calculator solves the quadratic A2.21 directly.</li>
@@ -803,9 +890,9 @@ function renderAbout() {
 <p style="margin-top:10px">Regime classification: for a given u₁ the discriminant D(u₁) is positive for u₁ ≤ u_CJ,def (weak deflagration) and for u₁ ≥ D_CJ (detonation; overdriven for u₁ &gt; D_CJ, subsonic products), and negative in between — no stationary front.</p>`;
   document.getElementById('about_text').innerHTML = lang==='uk'?uk:en;
   const leg = lang==='uk' ? [
-    ['γ','показник адіабати (γ₁ — реагенти, γ₂ — продукти)'],['p','тиск, Па (1 — до фронту, 2 — після)'],['ρ','густина, кг/м³'],['v','питомий об’єм 1/ρ, м³/кг'],['u','швидкість потоку відносно фронту, м/с'],['T','температура, K'],['M','число Маха (M₁ — набігаючий потік, M₂ — продукти)'],['a','швидкість звуку, м/с'],['q','питоме тепловиділення, Дж/кг суміші'],['R₂','газова стала продуктів, Дж/(кг·K)'],['δ','ступінь розширення u₂/u₁ = ρ₁/ρ₂'],['Q','безрозмірне тепловиділення qρ₁/p₁'],['D_CJ','швидкість детонації Чепмена–Жуге, м/с'],['u_CJ,def','швидкість дефлаграції Чепмена–Жуге (верхня межа стаціонарної дефлаграції), м/с'],['φ','коефіцієнт еквівалентності (1 — стехіометрія)'],
+    ['γ','показник адіабати (γ₁ — реагенти, γ₂ — продукти)'],['p','тиск, Па (1 — до фронту, 2 — після)'],['ρ','густина, кг/м³'],['v','питомий об’єм 1/ρ, м³/кг'],['u','швидкість потоку відносно фронту, м/с'],['T','температура, K'],['M','число Маха (M₁ — набігаючий потік, M₂ — продукти)'],['a','швидкість звуку, м/с'],['q','питоме тепловиділення, Дж/кг суміші'],['R₂','газова стала продуктів, Дж/(кг·K)'],['δ','ступінь розширення u₂/u₁ = ρ₁/ρ₂'],['Q','безрозмірне тепловиділення qρ₁/p₁'],['D_CJ','швидкість детонації Чепмена–Жуге, м/с'],['T_ad','рівноважна температура полум\'я при сталому тиску, K'],['δ_eq','рівноважний ступінь розширення ρ₁/ρ(T_ad)'],['u_CJ,def','швидкість дефлаграції Чепмена–Жуге (верхня межа стаціонарної дефлаграції), м/с'],['φ','коефіцієнт еквівалентності (1 — стехіометрія)'],
   ] : [
-    ['γ','ratio of specific heats (γ₁ reactants, γ₂ products)'],['p','pressure, Pa (1 — ahead of the front, 2 — behind)'],['ρ','density, kg/m³'],['v','specific volume 1/ρ, m³/kg'],['u','flow velocity relative to the front, m/s'],['T','temperature, K'],['M','Mach number (M₁ incoming flow, M₂ products)'],['a','speed of sound, m/s'],['q','specific heat release, J/kg of mixture'],['R₂','gas constant of products, J/(kg·K)'],['δ','expansion ratio u₂/u₁ = ρ₁/ρ₂'],['Q','dimensionless heat release qρ₁/p₁'],['D_CJ','Chapman–Jouguet detonation velocity, m/s'],['u_CJ,def','Chapman–Jouguet deflagration velocity (upper bound of stationary deflagration), m/s'],['φ','equivalence ratio (1 — stoichiometric)'],
+    ['γ','ratio of specific heats (γ₁ reactants, γ₂ products)'],['p','pressure, Pa (1 — ahead of the front, 2 — behind)'],['ρ','density, kg/m³'],['v','specific volume 1/ρ, m³/kg'],['u','flow velocity relative to the front, m/s'],['T','temperature, K'],['M','Mach number (M₁ incoming flow, M₂ products)'],['a','speed of sound, m/s'],['q','specific heat release, J/kg of mixture'],['R₂','gas constant of products, J/(kg·K)'],['δ','expansion ratio u₂/u₁ = ρ₁/ρ₂'],['Q','dimensionless heat release qρ₁/p₁'],['D_CJ','Chapman–Jouguet detonation velocity, m/s'],['T_ad','equilibrium constant-pressure adiabatic flame temperature, K'],['δ_eq','equilibrium expansion ratio ρ₁/ρ(T_ad)'],['u_CJ,def','Chapman–Jouguet deflagration velocity (upper bound of stationary deflagration), m/s'],['φ','equivalence ratio (1 — stoichiometric)'],
   ];
   document.getElementById('legend_text').innerHTML = leg.map(([k,v]) => `<div><b>${k}</b> — ${v}</div>`).join('');
 }
