@@ -33,15 +33,13 @@
                padding:8px 16px;border-radius:var(--pill);font-size:.875rem;font-weight:500;text-decoration:none;margin-right:4px;transition:.15s}
   .lang a.repo:hover{border-color:var(--border-strong);color:var(--ink)}
 
-  nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-bottom:28px}
-  .nav-group{display:flex;flex-wrap:wrap;gap:8px}
+  nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:28px}
   nav button{background:transparent;border:1px solid var(--border);color:var(--muted);padding:10px 18px;
              border-radius:var(--pill);cursor:pointer;font-family:inherit;font-size:.875rem;font-weight:500;transition:.15s}
   nav button:hover:not(.on){border-color:var(--border-strong);color:var(--ink)}
   nav button.on{background:var(--accent);border-color:var(--accent);color:#fff}
-  .nav-ref button{border-color:transparent;color:var(--faint);padding:10px 14px}
-  .nav-ref button:hover:not(.on){border-color:transparent;color:var(--ink);background:var(--surface)}
-  .nav-ref button.on{background:transparent;border-color:var(--border-strong);color:var(--ink)}
+  footer a.flink{color:var(--muted);border-bottom:1px solid var(--border-strong);text-decoration:none;cursor:pointer}
+  footer a.flink:hover{color:var(--ink)}
 
   .panel{display:none}.panel.active{display:block}
   .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:20px}
@@ -49,6 +47,19 @@
   .card .desc{color:var(--muted);font-size:.9375rem;margin-bottom:20px;max-width:88ch}
   .formula{background:none;border:none;border-left:2px solid var(--border-strong);padding:2px 0 2px 14px;
            margin:0 0 22px;font-family:var(--mono);font-size:.8125rem;line-height:1.75;color:var(--muted)}
+  .mixbar{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--surface-2);border:1px solid var(--border);
+          border-radius:var(--radius-sm);padding:10px 14px;margin:0 0 20px}
+  @media(max-width:560px){.mixbar{display:flex}}
+  .mixbar label{font-size:.8125rem;color:var(--faint);font-weight:500}
+  .mixbar select{min-width:210px}
+  details.adv{border-top:1px solid var(--border);margin-bottom:20px;padding-top:14px}
+  details.adv>summary{cursor:pointer;font-size:.875rem;font-weight:500;color:var(--muted);list-style:none;
+                      display:flex;align-items:center;gap:8px;user-select:none}
+  details.adv>summary::-webkit-details-marker{display:none}
+  details.adv>summary::before{content:'+';font-family:var(--mono);color:var(--faint)}
+  details.adv[open]>summary::before{content:'–'}
+  details.adv>summary:hover{color:var(--ink)}
+  details.adv>*:not(summary){margin-top:16px}
   .form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px;margin-bottom:20px}
   .field label{display:block;font-size:.8125rem;letter-spacing:.2px;color:var(--faint);margin-bottom:8px;font-weight:500}
   .field input{width:100%;padding:11px 14px;background:var(--surface-2);border:1px solid var(--border);
@@ -101,7 +112,7 @@
   .note{color:var(--faint);font-size:.8125rem;margin-top:12px}
   #about_text p, #about_text li{color:var(--muted)}
   #about_text b{color:var(--ink)}
-  footer{color:var(--faint);font-size:.8125rem;margin-top:48px;border-top:1px solid var(--border);padding-top:20px}
+  footer{color:var(--faint);font-size:.8125rem;margin-top:48px;border-top:1px solid var(--border);padding-top:20px;line-height:2}
   footer a{color:var(--muted)}
   textarea.export{width:100%;min-height:150px;background:var(--surface-2);color:var(--ink);border:1px solid var(--border);
                   border-radius:12px;font-family:var(--mono);font-size:.8125rem;padding:14px;margin-top:12px}
@@ -119,17 +130,11 @@
 </header>
 
 <nav id="nav">
-  <div class="nav-group">
-    <button onclick="switchTab(0)" data-i18n="tab0">1 · Ударна хвиля (u₁)</button>
-    <button onclick="switchTab(1)" data-i18n="tab1">2 · Ударна хвиля (p₂/p₁)</button>
-    <button onclick="switchTab(2)" data-i18n="tab2">3 · Детонація CJ</button>
-    <button onclick="switchTab(3)" data-i18n="tab3">4 · Дефлаграція</button>
-    <button onclick="switchTab(4)" data-i18n="tab4">5 · Режим горіння</button>
-  </div>
-  <div class="nav-group nav-ref">
-    <button onclick="switchTab(5)" data-i18n="tab5">Суміші та таблиці</button>
-    <button onclick="switchTab(6)" data-i18n="tab6">Про модель</button>
-  </div>
+  <button data-tab="4" onclick="switchTab(4)" data-i18n="tab4">Режим горіння</button>
+  <button data-tab="0" onclick="switchTab(0)" data-i18n="tab0">Ударна хвиля (u₁)</button>
+  <button data-tab="1" onclick="switchTab(1)" data-i18n="tab1">Ударна хвиля (p₂/p₁)</button>
+  <button data-tab="2" onclick="switchTab(2)" data-i18n="tab2">Детонація CJ</button>
+  <button data-tab="3" onclick="switchTab(3)" data-i18n="tab3">Дефлаграція</button>
 </nav>
 
 <!-- ===== 1: Normal shock, given u1 ===== -->
@@ -173,6 +178,7 @@
   <div class="card">
     <h2 data-i18n="h_a3">Алгоритм 3 — детонація Чепмена–Жуге</h2>
     <p class="desc" data-i18n="d_a3">Самопідтримна детонація: продукти рухаються зі швидкістю звуку, u₂ = a₂.</p>
+    <div class="mixbar"><label data-i18n="l_mix">Суміш</label><select id="preset3" onchange="loadPreset('a3', this.value)"></select></div>
     <div class="formula" data-i18n="f_a3">Вхід: γ₁, γ₂, p₁, ρ₁, q, R₂ → Вихід: D_CJ = u₁, p₂, ρ₂, T₂, u₂ = a₂, M₁</div>
     <div class="form-grid">
       <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a3_g1" value="1.4015"></div>
@@ -184,7 +190,6 @@
     </div>
     <div class="buttons">
       <button class="btn btn-calc" onclick="calc3()" data-i18n="btn_calc">Обчислити</button>
-      <select id="preset3" onchange="loadPreset('a3', this.value)"></select>
     </div>
   </div>
   <div class="card results" id="res3"><h2 data-i18n="h_res">Результати</h2><div id="res3_msg"></div><div class="result-grid" id="res3_grid"></div><div class="verify" id="res3_verify"></div></div>
@@ -195,6 +200,7 @@
   <div class="card">
     <h2 data-i18n="h_a4">Алгоритм 4 — дефлаграція (горіння з відомою швидкістю фронту)</h2>
     <p class="desc" data-i18n="d_a4">Квадратне рівняння для u₂ розв'язується напряму, p₂ і ρ₂ знаходяться із законів збереження. Фізичний корінь — той, що дає дозвукові продукти (M₂ &lt; 1). Показано також відкинутий корінь.</p>
+    <div class="mixbar"><label data-i18n="l_mix">Суміш</label><select id="preset4" onchange="loadPreset('a4', this.value)"></select></div>
     <div class="formula" data-i18n="f_a4">Вхід: γ₁, γ₂, p₁, ρ₁, q, u₁, R₂ → Вихід: u₂, δ = u₂/u₁ = ρ₁/ρ₂, p₂, ρ₂, T₂, M₁, M₂</div>
     <div class="form-grid">
       <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a4_g1" value="1.4015"></div>
@@ -207,7 +213,6 @@
     </div>
     <div class="buttons">
       <button class="btn btn-calc" onclick="calc4()" data-i18n="btn_calc">Обчислити</button>
-      <select id="preset4" onchange="loadPreset('a4', this.value)"></select>
     </div>
   </div>
   <div class="card results" id="res4">
@@ -222,7 +227,8 @@
 <div class="panel" id="panel4">
   <div class="card">
     <h2 data-i18n="h_a5">Режим горіння — класифікація за швидкістю фронту u₁</h2>
-    <p class="desc" data-i18n="d_a5">Для заданої суміші визначаються межі: швидкість дефлаграції Чепмена–Жуге u_CJ,def (верхня межа стаціонарної дефлаграції) і швидкість детонації D_CJ. Між ними стаціонарного фронту не існує (дискримінант D &lt; 0). Це — вихід для системи підтримки прийняття рішень. Процедура не є окремою формулою вихідної моделі: вона надбудована над алгоритмами 3 і 4 — D_CJ дає алгоритм 3, а u_CJ,def є коренем дискримінанта того самого квадратного рівняння, яке розв'язує алгоритм 4.</p>
+    <p class="desc" data-i18n="d_a5">Для заданої суміші визначаються межі: швидкість дефлаграції Чепмена–Жуге u_CJ,def (верхня межа стаціонарної дефлаграції) і швидкість детонації D_CJ. Між ними стаціонарного фронту не існує (дискримінант D &lt; 0). Це — вихід для системи підтримки прийняття рішень.</p>
+    <div class="mixbar"><label data-i18n="l_mix">Суміш</label><select id="preset5" onchange="loadPreset('a5', this.value)"></select></div>
     <div class="formula" data-i18n="f_a5">Вхід: γ₁, p₁, ρ₁, u₁ + два набори (γ₂, q, R₂) → Вихід: режим, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, діаграма Гюгоніо</div>
     <div class="form-grid">
       <div class="field"><label>γ₁ <span class="unit" data-i18n="u_react">(реагенти)</span></label><input id="a5_g1" value="1.4015"></div>
@@ -230,18 +236,20 @@
       <div class="field"><label>ρ₁ <span class="unit">кг/м³</span></label><input id="a5_r1" value="0.86977"></div>
       <div class="field"><label>u₁ <span class="unit">м/с</span></label><input id="a5_u1" value="2.253"></div>
     </div>
-    <p class="desc" style="margin-bottom:8px" data-i18n="d_sets">Два набори параметрів продуктів: для гілки дефлаграції вони беруться зі стану полум'я при сталому тиску, для гілки детонації — зі стану CJ (див. reference-data-methods.md). Поля заповнені значеннями стехіометричної суміші H₂/повітря, тож розрахунок можливий і без вибору суміші з бібліотеки — пресет лише підставляє обидва набори.</p>
-    <div class="form-grid">
-      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_g2def" value="1.2928"></div>
-      <div class="field"><label>q <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_qdef" value="3187668"></div>
-      <div class="field"><label>R₂ <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_R2def" value="342.47"></div>
-      <div class="field"><label>γ₂ <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_g2det" value="1.2858"></div>
-      <div class="field"><label>q <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_qdet" value="2853084"></div>
-      <div class="field"><label>R₂ <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_R2det" value="347.62"></div>
-    </div>
+    <details class="adv">
+      <summary data-i18n="s_sets">Параметри продуктів</summary>
+      <p class="desc" style="margin-bottom:0" data-i18n="d_sets">Дефлаграційна гілка бере їх зі стану полум'я при сталому тиску, детонаційна — зі стану CJ.</p>
+      <div class="form-grid" style="margin-bottom:0">
+        <div class="field"><label>γ₂ <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_g2def" value="1.2928"></div>
+        <div class="field"><label>q <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_qdef" value="3187668"></div>
+        <div class="field"><label>R₂ <span class="unit" data-i18n="u_defset">(дефлаграція)</span></label><input id="a5_R2def" value="342.47"></div>
+        <div class="field"><label>γ₂ <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_g2det" value="1.2858"></div>
+        <div class="field"><label>q <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_qdet" value="2853084"></div>
+        <div class="field"><label>R₂ <span class="unit" data-i18n="u_detset">(детонація)</span></label><input id="a5_R2det" value="347.62"></div>
+      </div>
+    </details>
     <div class="buttons">
       <button class="btn btn-calc" onclick="calc5()" data-i18n="btn_calc">Обчислити</button>
-      <select id="preset5" onchange="loadPreset('a5', this.value)"></select>
     </div>
   </div>
   <div class="card results" id="res5">
@@ -470,21 +478,21 @@ let mixtures = [
 const I18N = {
   uk: {
     title:'Газодинамічний калькулятор', subtitle:'Ударні хвилі · детонація Чепмена–Жуге · дефлаграція · класифікація режимів',
-    tab0:'1 · Ударна хвиля (u₁)', tab1:'2 · Ударна хвиля (p₂/p₁)', tab2:'3 · Детонація CJ', tab3:'4 · Дефлаграція', tab4:'5 · Режим горіння', tab5:'Суміші та таблиці', tab6:'Про модель',
-    btn_calc:'Обчислити', h_res:'Результати', u_react:'(реагенти)', u_prod:'(продукти)',
+    tab0:'Ударна хвиля (u₁)', tab1:'Ударна хвиля (p₂/p₁)', tab2:'Детонація CJ', tab3:'Дефлаграція', tab4:'Режим горіння', tab5:'Суміші та таблиці', tab6:'Про модель',
+    btn_calc:'Обчислити', h_res:'Результати', l_mix:'Суміш', s_sets:'Параметри продуктів', u_react:'(реагенти)', u_prod:'(продукти)',
     h_a1:'Алгоритм 1 — прямий стрибок ущільнення (задано u₁)', d_a1:'Без підведення теплоти. Умова існування стрибка: M₁ > 1.', f_a1:'Вхід: γ, p₁, ρ₁, T₁, u₁ → Вихід: p₂, ρ₂, T₂, u₂, M₁, M₂',
     h_a2:'Алгоритм 2 — прямий стрибок ущільнення (задано p₂/p₁)', d_a2:'Умова: p₂/p₁ > 1 (стрибок розрідження не існує).', f_a2:'Вхід: γ, p₁, ρ₁, T₁, p₂/p₁ → Вихід: M₁, u₁, u₂, ρ₂, T₂, M₂',
     h_a3:'Алгоритм 3 — детонація Чепмена–Жуге', d_a3:'Самопідтримна детонація: продукти рухаються зі швидкістю звуку, u₂ = a₂.', f_a3:'Вхід: γ₁, γ₂, p₁, ρ₁, q, R₂ → Вихід: D_CJ = u₁, p₂, ρ₂, T₂, u₂ = a₂, M₁',
     h_a4:'Алгоритм 4 — дефлаграція (горіння з відомою швидкістю фронту)', d_a4:"Квадратне рівняння для u₂ розв'язується напряму, p₂ і ρ₂ знаходяться із законів збереження. Фізичний корінь — той, що дає дозвукові продукти (M₂ < 1). Показано також відкинутий корінь.", f_a4:'Вхід: γ₁, γ₂, p₁, ρ₁, q, u₁, R₂ → Вихід: u₂, δ = u₂/u₁ = ρ₁/ρ₂, p₂, ρ₂, T₂, M₁, M₂',
-    h_a5:'Режим горіння — класифікація за швидкістю фронту u₁', d_a5:"Для заданої суміші визначаються межі: швидкість дефлаграції Чепмена–Жуге u_CJ,def (верхня межа стаціонарної дефлаграції) і швидкість детонації D_CJ. Між ними стаціонарного фронту не існує (дискримінант D < 0). Це — вихід для системи підтримки прийняття рішень. Процедура не є окремою формулою вихідної моделі: вона надбудована над алгоритмами 3 і 4 — D_CJ дає алгоритм 3, а u_CJ,def є коренем дискримінанта того самого квадратного рівняння, яке розв'язує алгоритм 4.", f_a5:'Вхід: γ₁, p₁, ρ₁, u₁ + два набори (γ₂, q, R₂) → Вихід: режим, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, діаграма Гюгоніо',
+    h_a5:'Режим горіння — класифікація за швидкістю фронту u₁', d_a5:"Для заданої суміші визначаються межі: швидкість дефлаграції Чепмена–Жуге u_CJ,def (верхня межа стаціонарної дефлаграції) і швидкість детонації D_CJ. Між ними стаціонарного фронту не існує (дискримінант D < 0). Це — вихід для системи підтримки прийняття рішень.", f_a5:'Вхід: γ₁, p₁, ρ₁, u₁ + два набори (γ₂, q, R₂) → Вихід: режим, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, діаграма Гюгоніо',
     h_hug:'Діаграма Гюгоніо (p–v)', d_hug:'Дві адіабати Гюгоніо — з детонаційним і з дефлаграційним набором параметрів продуктів; пряма Релея для заданого u₁; точки CJ. Стаціонарний режим — перетин прямої Релея з адіабатою відповідної гілки. Перша діаграма — повна, друга — гілка дефлаграції.',
     lg_hug:'адіабата Гюгоніо', lg_ray:'пряма Релея (u₁)', lg_raycj:'прямі Релея CJ (D_CJ, u_CJ,def)', lg_sol:"розв'язок (M₂<1)", lg_rej:'відкинутий корінь', lg_cj:'точки CJ',
     h_mix:'Бібліотека сумішей', d_mix:'Таблиця з файлу mixtures_h2_v2.csv (суміші H₂/O₂ та H₂/повітря). Рівноважні довідкові величини (D_CJ, p_CJ, T_CJ, T_ad, δ) і ламінарна швидкість горіння u₁ пораховані в Cantera 3.2.0 на механізмі ohn.yaml (підмеханізм O/H/N з GRI-Mech 3.0). Кожна суміш має два набори (q, γ₂, R₂): дефлаграційний і детонаційний. Клік по рядку завантажує суміш в обраний алгоритм.',
     o_a3:'→ Алг. 3 (детонація CJ)', o_a4:'→ Алг. 4 (дефлаграція)', o_a5:'→ Режим горіння', btn_import:'⬆ Імпорт CSV', btn_exportmix:'⬇ Експорт сумішей CSV',
     h_batch:'Таблиці результатів для всіх сумішей', d_batch:"Відтворює таблиці статті: Таблиця 1 — детонація CJ проти рівноважного розрахунку, Таблиця 2 — дефлаграція при ламінарній швидкості горіння проти рівноважного полум'я, Таблиця 3 — межі режимів.",
     btn_calcall:'Обчислити всі рядки', btn_md:'Markdown', btn_csv:'CSV', h_about:'Модель та її межі', h_legend:'Позначення',
-    preset:'— завантажити суміш —', rows:'рядків', verify:'Перевірка законів збереження',
-    d_sets:"Два набори параметрів продуктів: для гілки дефлаграції вони беруться зі стану полум'я при сталому тиску, для гілки детонації — зі стану CJ (див. reference-data-methods.md). Поля заповнені значеннями стехіометричної суміші H₂/повітря, тож розрахунок можливий і без вибору суміші з бібліотеки — пресет лише підставляє обидва набори.",
+    preset:'— власні значення —', rows:'рядків', verify:'Перевірка законів збереження',
+    d_sets:"Дефлаграційна гілка бере їх зі стану полум'я при сталому тиску, детонаційна — зі стану CJ.",
     u_defset:'(дефлаграція)', u_detset:'(детонація)',
     set_used:'Використано набір параметрів: {s}.', set_def:'дефлаграційний', set_det:'детонаційний',
     lg_hug_det:'адіабата (детонаційний набір)', lg_hug_def:'адіабата (дефлаграційний набір)',
@@ -506,21 +514,21 @@ const I18N = {
   },
   en: {
     title:'Gas-dynamic calculator', subtitle:'Normal shocks · Chapman–Jouguet detonation · deflagration · regime classification',
-    tab0:'1 · Normal shock (u₁)', tab1:'2 · Normal shock (p₂/p₁)', tab2:'3 · CJ detonation', tab3:'4 · Deflagration', tab4:'5 · Combustion regime', tab5:'Mixtures & tables', tab6:'About the model',
-    btn_calc:'Compute', h_res:'Results', u_react:'(reactants)', u_prod:'(products)',
+    tab0:'Normal shock (u₁)', tab1:'Normal shock (p₂/p₁)', tab2:'CJ detonation', tab3:'Deflagration', tab4:'Combustion regime', tab5:'Mixtures & tables', tab6:'About the model',
+    btn_calc:'Compute', h_res:'Results', l_mix:'Mixture', s_sets:'Product parameters', u_react:'(reactants)', u_prod:'(products)',
     h_a1:'Algorithm 1 — normal shock (given u₁)', d_a1:'No heat release. A shock exists only for M₁ > 1.', f_a1:'Input: γ, p₁, ρ₁, T₁, u₁ → Output: p₂, ρ₂, T₂, u₂, M₁, M₂',
     h_a2:'Algorithm 2 — normal shock (given p₂/p₁)', d_a2:'Requires p₂/p₁ > 1 (no expansion shocks).', f_a2:'Input: γ, p₁, ρ₁, T₁, p₂/p₁ → Output: M₁, u₁, u₂, ρ₂, T₂, M₂',
     h_a3:'Algorithm 3 — Chapman–Jouguet detonation', d_a3:'Self-sustained detonation: products leave at the speed of sound, u₂ = a₂.', f_a3:'Input: γ₁, γ₂, p₁, ρ₁, q, R₂ → Output: D_CJ = u₁, p₂, ρ₂, T₂, u₂ = a₂, M₁',
     h_a4:'Algorithm 4 — deflagration (given front velocity)', d_a4:'The quadratic for u₂ is solved directly, p₂ and ρ₂ follow from the conservation laws. The physical root is the one with subsonic products (M₂ < 1). The rejected root is shown as well.', f_a4:'Input: γ₁, γ₂, p₁, ρ₁, q, u₁, R₂ → Output: u₂, δ = u₂/u₁ = ρ₁/ρ₂, p₂, ρ₂, T₂, M₁, M₂',
-    h_a5:'Combustion regime — classification by front velocity u₁', d_a5:'For a given mixture the bounds are computed: the CJ deflagration velocity u_CJ,def (upper limit of stationary deflagration) and the detonation velocity D_CJ. Between them no stationary front exists (discriminant D < 0). This is the decision-support output. The procedure is not a separate formula of the source model: it is built on algorithms 3 and 4 — D_CJ comes from algorithm 3, and u_CJ,def is the root of the discriminant of the same quadratic that algorithm 4 solves.', f_a5:'Input: γ₁, p₁, ρ₁, u₁ + two (γ₂, q, R₂) sets → Output: regime, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, Hugoniot diagram',
+    h_a5:'Combustion regime — classification by front velocity u₁', d_a5:'For a given mixture the bounds are computed: the CJ deflagration velocity u_CJ,def (upper limit of stationary deflagration) and the detonation velocity D_CJ. Between them no stationary front exists (discriminant D < 0). This is the decision-support output.', f_a5:'Input: γ₁, p₁, ρ₁, u₁ + two (γ₂, q, R₂) sets → Output: regime, u_CJ,def, D_CJ, δ, M₂, p₂/p₁, Hugoniot diagram',
     h_hug:'Hugoniot diagram (p–v)', d_hug:'Two Hugoniot adiabats — one per product parameter set (detonation and deflagration); the Rayleigh line for the given u₁; the CJ points. A stationary regime is an intersection of the Rayleigh line with the adiabat of the corresponding branch. First chart — full diagram, second — deflagration branch.',
     lg_hug:'Hugoniot adiabat', lg_ray:'Rayleigh line (u₁)', lg_raycj:'CJ Rayleigh lines (D_CJ, u_CJ,def)', lg_sol:'solution (M₂<1)', lg_rej:'rejected root', lg_cj:'CJ points',
     h_mix:'Mixture library', d_mix:'Table from mixtures_h2_v2.csv (H₂/O₂ and H₂/air mixtures). The equilibrium reference quantities (D_CJ, p_CJ, T_CJ, T_ad, δ) and the laminar burning velocity u₁ are computed with Cantera 3.2.0 on ohn.yaml, the O/H/N submechanism of GRI-Mech 3.0. Each mixture carries two (q, γ₂, R₂) sets, one per branch. Click a row to load it into the selected algorithm.',
     o_a3:'→ Alg. 3 (CJ detonation)', o_a4:'→ Alg. 4 (deflagration)', o_a5:'→ Combustion regime', btn_import:'⬆ Import CSV', btn_exportmix:'⬇ Export mixtures CSV',
     h_batch:'Result tables for all mixtures', d_batch:'Reproduces the paper tables: Table 1 — CJ detonation against the equilibrium computation, Table 2 — deflagration at the laminar burning velocity against the equilibrium flame, Table 3 — regime bounds.',
     btn_calcall:'Compute all rows', btn_md:'Markdown', btn_csv:'CSV', h_about:'Model and its limits', h_legend:'Notation',
-    preset:'— load mixture —', rows:'rows', verify:'Conservation-law check',
-    d_sets:'Two sets of product parameters: the deflagration branch takes them from the constant-pressure flame state, the detonation branch from the CJ state (see reference-data-methods.md). The fields are pre-filled with the stoichiometric H₂/air values, so a run needs no mixture from the library — a preset merely fills in both sets.',
+    preset:'— custom values —', rows:'rows', verify:'Conservation-law check',
+    d_sets:'The deflagration branch takes them from the constant-pressure flame state, the detonation branch from the CJ state.',
     u_defset:'(deflagration)', u_detset:'(detonation)',
     set_used:'Parameter set used: {s}.', set_def:'deflagration', set_det:'detonation',
     lg_hug_det:'adiabat (detonation set)', lg_hug_def:'adiabat (deflagration set)',
@@ -553,7 +561,9 @@ function setLang(l) {
     if (el.tagName === 'LABEL' && el.querySelector('input')) { el.firstChild.textContent = T(k); }
     else el.innerHTML = T(k);
   });
-  document.getElementById('foot').innerHTML = T('foot') + ' · <a href="https://github.com/unpositive/shock-calculator" target="_blank" rel="noopener">github.com/unpositive/shock-calculator</a> · MIT · v1.0 (2026-09)';
+  document.getElementById('foot').innerHTML =
+      '<a class="flink" onclick="switchTab(5)">' + T('tab5') + '</a> · <a class="flink" onclick="switchTab(6)">' + T('tab6') + '</a><br>'
+      + T('foot') + ' · <a href="https://github.com/unpositive/shock-calculator" target="_blank" rel="noopener">github.com/unpositive/shock-calculator</a> · MIT · v1.0 (2026-09)';
   renderAbout(); renderMixtures();
   ['preset3','preset4','preset5'].forEach(id => {
     const el = document.getElementById(id);
@@ -563,10 +573,10 @@ function setLang(l) {
 }
 
 // --- helpers
-let currentTab = 0;
+let currentTab = 4;
 function switchTab(i) {
   document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active', j===i));
-  document.querySelectorAll('#nav button').forEach((b,j)=>b.classList.toggle('on', j===i));
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on', +b.dataset.tab===i));
   currentTab = i;
 }
 const V = id => parseFloat(document.getElementById(id).value.replace(',', '.'));
@@ -906,7 +916,7 @@ function renderAbout() {
 <li>Правило вибору кореня «беремо “+”, бо u₂ &gt; u₁» не працює: обидва корені дають u₂ &gt; u₁. Фізичний корінь — з дозвуковими продуктами (M₂ &lt; 1), тобто менший; більший дає p₂ &lt; 0.</li>
 <li>Формули П.2.76–П.2.77 (p₂ через ρ₂/ρ₁) справедливі лише в точці CJ (вбудовано u₂ = a₂) і не застосовні до дефлаграції; p₂ обчислюється із закону збереження імпульсу.</li>
 </ol>
-<p style="margin-top:10px">Класифікація режимів: для заданого u₁ дискримінант D(u₁) додатний при u₁ ≤ u_CJ,def (слабка дефлаграція) і при u₁ ≥ D_CJ (детонація; при u₁ &gt; D_CJ — пересжата, продукти дозвукові), від'ємний між ними — стаціонарного фронту немає.</p>`;
+<p style="margin-top:10px"><b>Класифікація режимів</b> — не окрема формула вихідної моделі, а надбудова над алгоритмами детонації та дефлаграції: верхню межу D_CJ дає перший, нижню u_CJ,def — корінь дискримінанта того самого квадратного рівняння, яке розв'язує другий. Для заданого u₁ дискримінант D(u₁) додатний при u₁ ≤ u_CJ,def (слабка дефлаграція) і при u₁ ≥ D_CJ (детонація; при u₁ &gt; D_CJ — пересжата, продукти дозвукові), від'ємний між ними — стаціонарного фронту немає.</p>`;
   const en = `
 <p>Model: one-dimensional stationary front in an ideal gas with constant ratios of specific heats γ₁ (reactants) and γ₂ (products) and specific heat release q. All regimes are solutions of the mass, momentum and energy conservation system.</p>
 <p style="margin-top:10px"><b>Where the product parameters come from.</b> The model writes the energy equation with constant specific heats, whereas the real balance is written with absolute enthalpies. Taking q = h₁(T₁) − h₂(T₁), with the products at the equilibrium composition of the target state, fixes the effective product heat capacity uniquely: c<sub>p2</sub> = [c<sub>p1</sub>(T₁)·T₁ + h₂(T₂) − h₂(T₁)]/T₂, and γ₂ = c<sub>p2</sub>/(c<sub>p2</sub> − R₂). So γ₂ is not a tabulated "effective exponent" but the one that makes the model's product enthalpy equal the real one. Because the two branches end at very different temperatures, every mixture carries <b>two sets</b> of (q, γ₂, R₂): from the constant-pressure flame state for deflagration, from the CJ state for detonation. Both are computed offline once with Cantera; at run time only the algebra is evaluated.</p>
@@ -917,7 +927,7 @@ function renderAbout() {
 <li>The root-selection rule “take ‘+’ because u₂ &gt; u₁” does not work: both roots give u₂ &gt; u₁. The physical root has subsonic products (M₂ &lt; 1), i.e. the smaller one; the larger one gives p₂ &lt; 0.</li>
 <li>Relations A2.76–A2.77 (p₂ from ρ₂/ρ₁ alone) hold only at the CJ point (they embed u₂ = a₂) and do not apply to deflagration; p₂ is computed from momentum conservation.</li>
 </ol>
-<p style="margin-top:10px">Regime classification: for a given u₁ the discriminant D(u₁) is positive for u₁ ≤ u_CJ,def (weak deflagration) and for u₁ ≥ D_CJ (detonation; overdriven for u₁ &gt; D_CJ, subsonic products), and negative in between — no stationary front.</p>`;
+<p style="margin-top:10px"><b>Regime classification</b> is not a separate formula of the source model but a layer over the detonation and deflagration algorithms: the upper bound D_CJ comes from the former, the lower bound u_CJ,def is the root of the discriminant of the same quadratic the latter solves. For a given u₁ the discriminant D(u₁) is positive for u₁ ≤ u_CJ,def (weak deflagration) and for u₁ ≥ D_CJ (detonation; overdriven for u₁ &gt; D_CJ, subsonic products), and negative in between — no stationary front.</p>`;
   document.getElementById('about_text').innerHTML = lang==='uk'?uk:en;
   const leg = lang==='uk' ? [
     ['γ','показник адіабати (γ₁ — реагенти, γ₂ — продукти)'],['p','тиск, Па (1 — до фронту, 2 — після)'],['ρ','густина, кг/м³'],['v','питомий об’єм 1/ρ, м³/кг'],['u','швидкість потоку відносно фронту, м/с'],['T','температура, K'],['M','число Маха (M₁ — набігаючий потік, M₂ — продукти)'],['a','швидкість звуку, м/с'],['q','питоме тепловиділення, Дж/кг суміші'],['R₂','газова стала продуктів, Дж/(кг·K)'],['δ','ступінь розширення u₂/u₁ = ρ₁/ρ₂'],['Q','безрозмірне тепловиділення qρ₁/p₁'],['D_CJ','швидкість детонації Чепмена–Жуге, м/с'],['T_ad','рівноважна температура полум\'я при сталому тиску, K'],['δ_eq','рівноважний ступінь розширення ρ₁/ρ(T_ad)'],['u_CJ,def','швидкість дефлаграції Чепмена–Жуге (верхня межа стаціонарної дефлаграції), м/с'],['φ','коефіцієнт еквівалентності (1 — стехіометрія)'],
@@ -931,7 +941,7 @@ function renderAbout() {
 (function init() {
   let l = 'uk'; try { l = localStorage.getItem('gd_lang') || 'uk'; } catch(e) {}
   setLang(l);
-  switchTab(0);
+  switchTab(4);
 })();
 </script>
 </body>
