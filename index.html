@@ -666,7 +666,7 @@ function calc4() {
   showVerify('res4', [[T('mass'), r1*u1, r.r2*r.u2],[T('mom'), p1+r1*u1*u1, r.p2+r.r2*r.u2*r.u2],
     [T('en'), g1/(g1-1)*p1/r1+u1*u1/2+q, g2/(g2-1)*r.p2/r.r2+r.u2*r.u2/2]]);
   const h = r.root2;
-  document.getElementById('res4_root2').innerHTML = `<div class="alert alert-orange" style="margin-top:14px"><b>${T('root2')}</b>: u₂ = ${fmt(h.u2)} m/s, u₂/u₁ = ${fmt(h.delta)}, p₂/p₁ = ${(h.p2/p1).toFixed(4)}, M₂ = ${isNaN(h.M2)?'—':fmt(h.M2)}.<br><span style="color:var(--muted)">${T('root2_note')}</span></div>`;
+  document.getElementById('res4_root2').innerHTML = `<details class="adv" style="margin-top:6px"><summary>${T('root2')}</summary><p class="desc" style="margin-bottom:0">u₂ = ${fmt(h.u2)} m/s, u₂/u₁ = ${fmt(h.delta)}, p₂/p₁ = ${(h.p2/p1).toFixed(4)}, M₂ = ${isNaN(h.M2)?'—':fmt(h.M2)}. ${T('root2_note')}</p></details>`;
 }
 // --- Regime
 function calc5() {
